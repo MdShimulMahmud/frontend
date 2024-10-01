@@ -60,6 +60,10 @@ const QuizTaker: React.FC = () => {
   };
 
   if (!quiz) return <div className="text-center mt-8">Loading...</div>;
+  if (!quiz.questions.length)
+    return (
+      <div className="text-center mt-8">No questions found for this quiz.</div>
+    );
 
   return (
     <div className="container mx-auto px-4 py-8">

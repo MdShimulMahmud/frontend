@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import QuestionCreator from "./components/QuestionCreator";
 import QuizCreator from "./components/QuizCreator";
 import QuizList from "./components/QuizList";
 import QuizTaker from "./components/QuizTaker";
@@ -15,8 +16,12 @@ const App: React.FC = () => {
         </nav>
         <Routes>
           <Route path="/" element={<QuizList />} />
-          <Route path="/quiz/:id" element={<QuizTaker />} />
+          <Route path="/quizzes/:id" element={<QuizTaker />} />
           <Route path="/create-quiz" element={<QuizCreator />} />
+          <Route
+            path="/quizzes/:quizId/questions"
+            element={<QuestionCreator />}
+          />
         </Routes>
       </div>
     </Router>

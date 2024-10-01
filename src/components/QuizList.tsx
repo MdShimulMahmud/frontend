@@ -26,7 +26,7 @@ const QuizList: React.FC = () => {
         {quizzes.map((quiz) => (
           <Link
             key={quiz.id}
-            to={`/quiz/${quiz.id}`}
+            to={`/quizzes/${quiz.id}`}
             className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition duration-300"
           >
             <h2 className="text-xl font-semibold mb-2">{quiz.title}</h2>
