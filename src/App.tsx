@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import QuizCreator from "./components/QuizCreator";
+import QuizList from "./components/QuizList";
+import QuizTaker from "./components/QuizTaker";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        <nav className="bg-blue-600 text-white p-4">
+          <div className="container mx-auto">
+            <h1 className="text-2xl font-bold">Quiz App</h1>
+          </div>
+        </nav>
+        <Routes>
+          <Route path="/" element={<QuizList />} />
+          <Route path="/quiz/:id" element={<QuizTaker />} />
+          <Route path="/create-quiz" element={<QuizCreator />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
