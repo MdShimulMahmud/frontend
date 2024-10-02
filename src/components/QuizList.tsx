@@ -35,7 +35,7 @@ const QuizList: React.FC = () => {
         ))}
       </div>
       <Link
-        to="/create-quiz"
+        to={`/create-quiz`}
         className="mt-8 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
       >
         Create New Quiz
