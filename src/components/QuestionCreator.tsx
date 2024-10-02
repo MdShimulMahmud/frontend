@@ -61,7 +61,7 @@ const QuestionCreator: React.FC = () => {
         `http://localhost:5000/api/quizzes/${quizId}/questions`,
         question
       );
-      navigate(`/quiz/${quizId}`);
+      navigate(`/quizzes/${quizId}`);
     } catch (error) {
       console.error("Error creating question:", error);
     }

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 interface Question {
   id: number;
@@ -62,12 +62,38 @@ const QuizTaker: React.FC = () => {
   if (!quiz) return <div className="text-center mt-8">Loading...</div>;
   if (!quiz.questions.length)
     return (
-      <div className="text-center mt-8">No questions found for this quiz.</div>
+      <div className="m-10">
+        <h1 className="text-3xl font-bold">{quiz.title}</h1>
+        <div className="flex flex-row justify-between items-center mb-6">
+          <div className="text-center mt-8">
+            No questions found for this quiz.
+          </div>
+          <button>
+            <Link
+              to={`/quizzes/${id}/questions`}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+            >
+              Add Question
+            </Link>
+          </button>
+        </div>
+      </div>
     );
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">{quiz.title}</h1>
+      <div className="flex flex-row justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">{quiz.title}</h1>
+        <button>
+          <Link
+            to={`/quizzes/${id}/questions`}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+          >
+            Add Question
+          </Link>
+        </button>
+      </div>
+
       {score === null ? (
         <div className="bg-white shadow-md rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-4">
