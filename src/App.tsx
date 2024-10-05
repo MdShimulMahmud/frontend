@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
 import Login from "./components/Login";
 import QuestionCreator from "./components/QuestionCreator";
 import QuizCreator from "./components/QuizCreator";
@@ -24,7 +30,9 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-gray-100">
         <nav className="bg-blue-600 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Quiz App</h1>
+            <NavLink to={"/"} className="text-2xl font-bold">
+              Quiz App
+            </NavLink>
 
             <div>
               {isLoggedIn ? (
